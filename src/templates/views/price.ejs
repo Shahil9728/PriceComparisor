@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../partial/index.css">
+    <link rel="stylesheet" href="../partial/background.css">
+    <title>Price Comparisor</title>
+    <link rel = "icon" href = "../images/logo4.png" type = "image/x-icon">
+    </script>
+
+</head>
+
+<body>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="context">
+        <h1 style="font-size: 30px;">Price Comparisor</h1>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <form class="example" action="/search" method="POST">
+            <div class="input">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+        <br>
+        <div class="popular">
+            <p>
+                <span style="color: #472183;font-weight: 800;">Popular : </span>
+            <form class="example" action="/search" method="POST" style="display: inline-block;">
+                <input type="hidden" name="search" value="fire bolt watches" style="cursor:pointer;" />
+                <button type="submit"
+                    style="background:none;box-shadow:none;border:none;width:auto;color:#82C3EC;cursor:pointer;"
+                    class="linkbtn">Fire
+                    Bolt Watches
+                </button>
+            </form>
+            <form class="example" action="/search" method="POST" style="display: inline-block;">
+                <input type="hidden" name="search" value="Slippers" style="cursor:pointer;" />
+                <button type="submit"
+                    style="background:none;box-shadow:none;border:none;width:auto;color:#82C3EC;cursor:pointer;"
+                    class="linkbtn">Slippers
+                </button>
+            </form>
+            <form class="example" action="/search" method="POST" style="display: inline-block;">
+                <input type="hidden" name="search" value="One plus Phone" style="cursor:pointer;" />
+                <button type="submit"
+                    style="background:none;box-shadow:none;border:none;width:auto;color:#82C3EC;cursor:pointer;"
+                    class="linkbtn">One plus Phone
+                </button>
+            </form>
+            <form class="example" action="/search" method="POST" style="display: inline-block;">
+                <input type="hidden" name="search" value="Bluetooth Headset" style="cursor:pointer;" />
+                <button type="submit"
+                    style="background:none;box-shadow:none;border:none;width:auto;color:#82C3EC;cursor:pointer;"
+                    class="linkbtn">Bluetooth Headset
+                </button>
+            </form>
+            </p>
+        </div>
+        <br>
+        <div class="item-container">
+            <div class="items">
+                <div class="item">
+                    <div class="flipkartdiv">
+                        <div class="fimg">
+                            <img src="<%= data2.dfimg %>" alt="">
+                        </div>
+                        <div class="fname" style="font-weight: 400;">
+                            <%= data2.dfname %>
+                        </div>
+                        <div class="frating" style="font-weight: 400;">
+                            <%= data2.dfrating %>
+                        </div>
+                        <div class="fprice" style="font-weight: 550;font-size: larger;color: red;">
+                            <%= data2.dfprice %>
+                        </div>
+                        <div class="flink" style="display: flex;justify-content: center;">
+                            <a href="<%= data2.dflink %>" target="_blank">
+                                <button type="submit" class="btn">
+                                    BUY NOW
+                                </button>
+                            </a>
+                            <span class="company">
+                                <a href="https://www.flipkart.com">
+                                    <img src="../images/flipkart.png" alt="">
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="amazondiv">
+                        <div class="aimg">
+                            <img src="<%= data2.daimg %>" alt="">
+                        </div>
+                        <div class="aname" style="font-weight: 400;">
+                            <%= data2.daname %>
+                        </div>
+                        <div class="arating" style="font-weight: 400;">
+                            <%= data2.darating %>
+                        </div>
+                        <div class="aprice" style="font-weight: 550;font-size: larger;color: red;">
+                            <%= data2.daprice %>
+                        </div>
+                        <div class="alink" style="display: flex;justify-content: center;">
+                            <a href="<%= data2.dalink %>" target="_blank">
+                                <button type="submit" class="btn">
+                                    BUY NOW
+                                </button>
+                            </a>
+                            <span class="company" >
+                                <a href="https://www.amazon.in">
+                                    <img src="../images/amazon.png" alt="">
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
