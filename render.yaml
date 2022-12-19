@@ -4,4 +4,4 @@ build:
 
 start:
   - npm start
-  - python main.py
+  - python access.py
