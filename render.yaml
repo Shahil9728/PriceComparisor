@@ -1,0 +1,7 @@
+build:
+  - npm install
+  - pip install -r requirements.txt
+
+start:
+  - npm start
+  - python main.py
