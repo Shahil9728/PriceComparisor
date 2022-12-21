@@ -55,9 +55,7 @@ app.post('/search', async (req, res) => {
         console.log(error)
     }
   });
-  
-function myfunction(query1) 
-{
+function myfunction(query1){
     return new Promise((resolve, reject) => {
       let options = {
         mode: 'text',
@@ -66,7 +64,6 @@ function myfunction(query1)
         scriptPath: './',
         args: [query1]
     };
-    
     PythonShell.run('access.py', options, function(err, results) {
         if (err) console.log(err);
         let json = JSON.stringify(results)
@@ -74,29 +71,27 @@ function myfunction(query1)
         let obj = JSON.parse(buffer)
         console.log(obj)
         resolve(obj)
+        });
     });
+}
+
+// const childpython = spawn('python3', ['access.py', query1])
+// try
+// {
+//     childpython.stdout.on('data', (data) => {
+//       let json = JSON.stringify(data)
+//       let buffer = (Buffer.from(JSON.parse(json).data)).toString('utf8')
+//       let obj = JSON.parse(buffer)
+//       console.log(obj)
+//       resolve(obj);
+//   });
+// }
+// catch(error)
+// {
+//   console.log(error)
+// }
 
 
-
-    // const childpython = spawn('python3', ['access.py', query1])
-    // try
-    // {
-    //     childpython.stdout.on('data', (data) => {
-    //       let json = JSON.stringify(data)
-    //       let buffer = (Buffer.from(JSON.parse(json).data)).toString('utf8')
-    //       let obj = JSON.parse(buffer)
-    //       console.log(obj)
-    //       resolve(obj);
-    //   });
-    // }
-    // catch(error)
-    // {
-    //   console.log(error)
-    // }
-    });
-  }
-
-  
 
 
   
