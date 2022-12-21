@@ -74,7 +74,6 @@ function myfunction(query1)
         let obj = JSON.parse(buffer)
         console.log(obj)
         resolve(obj)
-<<<<<<< HEAD
     });
 
 
@@ -94,19 +93,8 @@ function myfunction(query1)
     // {
     //   console.log(error)
     // }
-
-
-
     });
   }
-=======
-        });
-   });
-}
-
-
->>>>>>> e588f50c5b95e5d4af6a8ba06af5d1fb73e58b30
-
 
   
 
