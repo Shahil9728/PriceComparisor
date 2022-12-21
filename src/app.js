@@ -14,6 +14,7 @@ const { json } = require('body-parser');
 const { load } = require('netlify-lambda/lib/config');
 const { TIMEOUT } = require('dns');
 const { PassThrough } = require('stream');
+const { PythonShell } = require('python-shell');
 
 
 require('dotenv').config();
@@ -57,24 +58,52 @@ app.post('/search', async (req, res) => {
   
 function myfunction(query1) {
     return new Promise((resolve, reject) => {
-    const childpython = spawn('python', ['access.py', query1])
-    try
-    {
-        childpython.stdout.on('data', (data) => {
-          let json = JSON.stringify(data)
-          let buffer = (Buffer.from(JSON.parse(json).data)).toString('utf8')
-          let obj = JSON.parse(buffer)
-          console.log(obj)
-          resolve(obj);
-      });
-    }
-    catch(error)
-    {
-      console.log(error)
-    }
+      let options = {
+        mode: 'text',
+        pythonPath: 'python',
+        pythonOptions: ['-u'],
+        scriptPath: './',
+        args: [query1]
+    };
+    
+    PythonShell.run('access.py', options, function(err, results) {
+        if (err) console.log(err);
+        let json = JSON.stringify(results)
+        let buffer = JSON.parse(json).toString('utf-8')
+        let obj = JSON.parse(buffer)
+        console.log(obj)
+        resolve(obj)
+    });
+
+
+
+    // const childpython = spawn('python3', ['access.py', query1])
+    // try
+    // {
+    //     childpython.stdout.on('data', (data) => {
+    //       let json = JSON.stringify(data)
+    //       let buffer = (Buffer.from(JSON.parse(json).data)).toString('utf8')
+    //       let obj = JSON.parse(buffer)
+    //       console.log(obj)
+    //       resolve(obj);
+    //   });
+    // }
+    // catch(error)
+    // {
+    //   console.log(error)
+    // }
+
+
+
     });
   }
 
+
+  
+
+
+  
+  
 
 app.get('/price', (req, res) => {
     res.render('price.ejs')
