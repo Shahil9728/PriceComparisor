@@ -57,7 +57,7 @@ app.post('/search', async (req, res) => {
   
 function myfunction(query1) {
     return new Promise((resolve, reject) => {
-    const childpython = spawn('python', ['access.py', query1])
+    const childpython = spawn('python3', ['access.py', query1])
     try
     {
         childpython.stdout.on('data', (data) => {
