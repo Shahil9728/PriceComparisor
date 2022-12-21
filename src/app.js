@@ -56,7 +56,8 @@ app.post('/search', async (req, res) => {
     }
   });
   
-function myfunction(query1) {
+function myfunction(query1) 
+{
     return new Promise((resolve, reject) => {
       let options = {
         mode: 'text',
@@ -73,7 +74,10 @@ function myfunction(query1) {
         let obj = JSON.parse(buffer)
         console.log(obj)
         resolve(obj)
-    });
+        });
+   });
+}
+
 
 
 
