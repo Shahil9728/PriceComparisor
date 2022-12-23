@@ -28,12 +28,15 @@
     "netlify-lambda": "^2.0.15",
     "nodemon": "^2.0.20",
     "os": "^0.1.2",
-    "package.json": "^2.0.1",
+    "package.json": "^0.0.0",
     "pug": "^3.0.2",
     "python-shell": "^3.0.1",
     "request-promise": "^4.2.6",
     "serverless-http": "^3.1.0",
     "slugify": "^1.6.5",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
