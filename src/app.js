@@ -43,34 +43,34 @@ app.get('/index', (req, res) => {
     res.render('index.hbs')
 })
 
-app.post('/search', async (req, res) => {  
+app.post('/search', async (req, res) => {
     const variable1 = req.body.search;
     console.log(variable1)
-    try
-    {
+    try {
         const data2 = await myfunction(variable1);
-        res.render('price.ejs', {data2: data2});
+        res.render('price.ejs', { data2: data2 });
     }
-    catch(error){
+    catch (error) {
         console.log(error)
     }
-  });
-function myfunction(query1){
+});
+function myfunction(query1) {
     return new Promise((resolve, reject) => {
-      let options = {
-        mode: 'text',
-        pythonPath: 'python',
-        pythonOptions: ['-u'],
-        scriptPath: './',
-        args: [query1]
-    };
-    PythonShell.run('access.py', options, function(err, results) {
-        if (err) console.log(err);
-        let json = JSON.stringify(results)
-        let buffer = JSON.parse(json).toString('utf-8')
-        let obj = JSON.parse(buffer)
-        console.log(obj)
-        resolve(obj)
+        let options = {
+            mode: 'text',
+            pythonPath: 'python',
+            pythonOptions: ['-u'],
+            scriptPath: './',
+            args: [query1]
+        };
+        PythonShell.run('access.py', options, function (err, results) {
+            if (err) console.log(err);
+            let json = JSON.stringify(results)
+            let buffer = JSON.parse(json).toString('utf-8')
+            let obj = JSON.parse(buffer)
+            console.log(obj)
+            resolve(obj)
+
         });
     });
 }
@@ -94,8 +94,8 @@ function myfunction(query1){
 
 
 
-  
-  
+
+
 
 app.get('/price', (req, res) => {
     res.render('price.ejs')
