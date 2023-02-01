@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/Shahil9728/heroku-web-hosting/ -->
+<!-- Improved compatibility of back to top link: See: https://github.com/Shahil9728/PriceComparisor/ -->
 <a name="readme-top"></a>
 
 
@@ -14,7 +14,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Shahil9728/heroku-web-hosting">
+  <a href="https://github.com/Shahil9728/PriceComparisor">
     <img src="src/templates/images/logo4.png" alt="Logo" width="80" height="80">
   </a>
 
